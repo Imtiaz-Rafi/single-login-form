@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.disp-none {
+    display: none !important;
+}
+
+.disp-block {
+    display: block !important;
+}
+
+.btns {}
+
+/* Sign-Up */
+
+.signup {}
+
+.signup-container {
+    width: 750px;
+    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+}
+
+.login-container {
+    width: 450px;
+    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+}
+
+.login-content {
+    padding: 40px;
+    height: auto;
+    min-height: 500px;
+}
+
+.border {
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+}
+
+.signup-content {
+    display: flex;
+    padding: 40px;
+}
+
+.signup-content>.content-left {}
+
+.signup-content>.content-right {
+    padding-left: 50px;
+    padding-top: 100px;
+    text-align: center;
+
+}
+
+.content-right>.content-image {}
+
+.content-right>.content-tagline>p {
+    font-weight: 300;
+    font-size: 16px;
+    color: #202124;
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+}
+
+.login-header {
+    text-align: center;
+}
+
+.login-header>.logo>img {
+    width: 70px;
+
+}
+
+.content-left>.logo>img {
+    width: 70px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.signup-headings>h3,
+.login-headings>h3 {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+    padding: 15px 0px;
+}
+
+.signup-text>p,
+.login-text>p {
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.input-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.input-box {
+    position: relative;
+    margin-top: 20px;
+}
+
+.input {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid rgb(218, 220, 224);
+    color: #202124;
+    padding: 6px 8px;
+    height: 35px;
+    width: 100%;
+    transition: .25s;
+    margin: 2px;
+}
+
+.login-input {
+    font-size: 16px;
+    height: 50px;
+    padding: 13px 15px;
+}
+
+.login-link {
+    width: 100%;
+}
+
+.login-mail-link {
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.login-mail-link:hover {
+    background: rgba(60, 64, 67, 0.039)
+}
+
+.login-mail-link>.mail-icon>svg,
+.login-mail-link>.down-arrow>svg {
+    width: 20px;
+    padding: 0px 5px;
+}
+
+.login-mail-link>.mail-name>p {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #3c4043;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #1a73e8;
+}
+
+input.error:focus {
+    border: 2px solid #d93025;
+}
+
+.input-label {
+    position: absolute;
+    color: #6c6f72;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 10px;
+    left: 8px;
+    padding: 0px 5px;
+    transition: .20s;
+}
+
+.login-label {
+    font-size: 16px;
+    top: 18px;
+    left: 12px;
+}
+
+.input:focus+.input-label {
+    color: #1a73e8;
+}
+
+.input.error:focus+.input-label,
+.input.error.active+.input-label {
+    color: #d93025;
+}
+
+.input.active+.input-label,
+.input:focus+.input-label,
+.input:active+.input-label {
+    top: -6px;
+    background-color: #ffffff;
+    font-size: 11px;
+}
+
+.success {
+    font-size: 28px !important;
+    color: #00b42d !important;
+    font-weight: 600 !important;
+}
+
+.error {
+    border-color: #d93025;
+}
+
+.error+.input-label {}
+
+.err-txt {
+    font-family: roboto;
+    font-size: 12px;
+    color: #d93025;
+    padding: 5px 0px;
+    display: flex;
+    gap: 10px;
+}
+
+.info-text {
+    font-family: roboto;
+    font-size: 12px;
+    padding: 5px 10px;
+    color: #6c6f72;
+}
+
+.input-check {
+    display: flex;
+    align-items: center;
+}
+
+.check-text {
+    padding: 0px 10px;
+    color: #3b3b3b;
+    font-size: 14px;
+}
+
+.checkbox {
+    display: flex;
+}
+
+input[type=checkbox] {
+    width: 20px;
+}
+
+.forgot-mail,
+.login-desc {
+    padding: 10px 0px;
+}
+
+.forgot-mail>a,
+.learn-more>a {
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #1a73e8;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+}
+
+.login-desc {
+    margin-top: 32px;
+}
+
+.login-desc>p {
+    color: #5f6368;
+    font-size: 14px;
+    line-height: 1.4286;
+}
+
+.form-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    align-items: center;
+}
+
+.link-btn>a {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-weight: 500;
+    color: #1a73e8;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.link-btn>a:hover {
+    background: #f5f9ff;
+    border-radius: 4px;
+    color: #0e5fc9;
+}
+
+.input-btn>a,
+.input-btn>button {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-weight: 500;
+    background: #1a73e8;
+    color: #ffffff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input-btn>button:hover {
+    background-color: #1661c4;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    /* box-shadow: 0 1px 2px 0 var(--gm-fillbutton-keyshadow-color, rgba(60, 64, 67, .3)), 0 1px 3px 1px var(--gm-fillbutton-ambientshadow-color, rgba(60, 64, 67, .15)); */
+}
+
+@media only screen and (max-width: 900px) {
+    .signup-container {
+        width: 450px;
+    }
+
+    .content-right {
+        display: none;
+    }
+
+    .signup-content {
+        display: block;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .border {
+        border: none;
+    }
+
+    .signup-container,
+    .login-container {
+        width: 100%;
+    }
+
+    .input-flex {
+        display: block;
+    }
+
+    .w-50 {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width:450px) {
+    .signup-content {
+        padding: 40px 20px;
+    }
+}

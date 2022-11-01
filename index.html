@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gmail</title>
+</head>
+
+<body onload="toggleDisplay()">
+    <section class="login" id="index">
+        <div class="login-container ">
+            <div class="login-content border">
+                <div class="login-header">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="login-taglines">
+                        <div class="login-headings">
+                            <h3>Welcome to Google</h3>
+                        </div>
+                        <div class="login-text">
+                            <p>to continue to Gmail</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <div class="link-btn">
+
+                        <a href="index.html?signup">Create account</a>
+                    </div>
+                    <div class="input-btn">
+                        <a href="index.html?mail-login">Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup" id="signup">
+        <div class="signup-container ">
+            <div class="signup-content border">
+                <div class="content-left">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="signup-taglines">
+                        <div class="signup-headings">
+                            <h3>Create your Google Account</h3>
+                        </div>
+                        <div class="signup-text">
+                            <p>to continue to Gmail</p>
+                        </div>
+                    </div>
+                    <div class="signup-forms">
+                        <form action="index.html?mail-login" name="signUpForm" id="signUpForm">
+                            <div class="input-flex">
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="text" class="input focus-input" name="fname" id="fname">
+                                    <label for="fname" class="input-label">First Name</label>
+                                </div>
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="text" class="input" name="lname" id="lname">
+                                    <label for="lname" class="input-label">Last Name</label>
+                                </div>
+                            </div>
+                            <div id="name-error"></div>
+                            <div class="input-box w-100" onchange="isActive()">
+                                <input type="text" class="input" name="email" id="email">
+                                <label for="email" class="input-label">Username</label>
+                            </div>
+                            <div id="mail-error"></div>
+                            <div id="mail-text" class="info-text">You can use letters, numbers & periods</div>
+                            <div class="input-flex">
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="password" class="input" name="pass" id="pass">
+                                    <label for="pass" class="input-label">Password</label>
+                                </div>
+                                <div class="input-box w-50" onchange="isActive()">
+                                    <input type="password" class="input" name="conpass" id="conpass">
+                                    <label for="conpass" class="input-label">Confirm</label>
+                                </div>
+                            </div>
+                            <div id="pass-error"></div>
+                            <div id="pass-text" class="info-text">Use 8 or more characters with a mix of
+                                letters, numbers & symbols</div>
+
+                            <div class="input-box input-check">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="checkbox" id="checkbox" onchange="showPass()"
+                                        width="100px">
+                                    <p class="check-text">Show Password</p>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <div class="link-btn">
+                                    <a href="index.html?mail-login">Sign in instead</a>
+                                </div>
+                                <div class="input-btn">
+                                    <button type="submit" onclick="signUpSubmit()">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <div class="content-image">
+                        <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" width="244"
+                            height="244" class="" alt="right image">
+                    </div>
+                    <div class="content-tagline">
+                        <p>One account. All of Google working for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="login" id="mail-login">
+        <div class="login-container ">
+            <div class="login-content border">
+                <div class="login-header">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="login-taglines">
+                        <div class="login-headings">
+                            <h3>Sign in</h3>
+                        </div>
+                        <div class="login-text">
+                            <p>to continue to Gmail</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="signup-forms">
+                    <form action="index.html?pass-login" name="mailForm" id="mailForm">
+                        <div class="input-box w-100" onchange="isActive()">
+                            <input type="text" class="input login-input" name="email" id="login-email">
+                            <label for="email" class="input-label login-label">Email or Phone</label>
+                        </div>
+                        <div id="login-mail-error"></div>
+                        <div class="forgot-mail">
+                            <a href="#">Forgot email?</a>
+                        </div>
+                        <div class="login-desc">
+                            <p>Not your computer? Use Guest mode to sign in privately.
+                                <span class="learn-more">
+                                    <a href="#">Learn more</a>
+                                </span>
+
+                            </p>
+                        </div>
+                        <div class="form-bottom">
+                            <div class="link-btn">
+                                <a href="index.html?signup">Create account</a>
+                            </div>
+                            <div class="input-btn">
+                                <button type="submit" onclick="mailSubmit()">Next</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="login" id="pass-login">
+        <div class="login-container">
+            <div class="login-content border">
+                <div class="login-header">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="login-taglines">
+                        <div class="login-headings">
+                            <h3>Welcome</h3>
+                        </div>
+                        <div class="login-link">
+                            <a href="login.html">
+                                <div class="login-mail-link">
+                                    <div class="mail-icon">
+                                        <svg aria-hidden="true" class="stUf5b" fill="currentColor" focusable="false"
+                                            width="48px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.36 14.83c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="mail-name">
+                                        <p id="mail-name"></p>
+                                    </div>
+                                    <div class="down-arrow">
+                                        <svg aria-hidden="true" class="stUf5b MSBt4d" fill="currentColor"
+                                            focusable="false" width="24px" viewBox="0 0 24 24"
+                                            xmlns="https://www.w3.org/2000/svg">
+                                            <polygon
+                                                points="12,16.41 5.29,9.71 6.71,8.29 12,13.59 17.29,8.29 18.71,9.71">
+                                            </polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="signup-forms">
+                    <form action="index.html?welcome" name="passForm" id="passForm">
+                        <div class="input-box w-100" onchange="isActive()">
+                            <input type="password" class="input login-input" name="pass" id="login-pass">
+                            <label for="pass" class="input-label login-label">Enter your password</label>
+                        </div>
+                        <div id="login-pass-error"></div>
+                        <div class="input-box input-check">
+                            <div class="checkbox">
+                                <input type="checkbox" name="checkbox" id="checkbox" onchange="showPass2()"
+                                    width="100px">
+                                <p class="check-text">Show Password</p>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <div class="link-btn">
+                                <a href="#">Forgot Password</a>
+                            </div>
+                            <div class="input-btn">
+                                <button type="submit" onclick="passSubmit()">Next</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="login" id="welcome">
+        <div class="login-container ">
+            <div class="login-content border">
+                <div class="login-header">
+                    <div class="logo">
+                        <img src="./images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="login-taglines">
+                        <div class="login-headings">
+                            <h3 class="success">Congratulations</h3>
+                        </div>
+                        <div class="login-text">
+                            <p>You have Signed in Successfully</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <div class="link-btn">
+                        <a href="index.html?signup">Create account Again</a>
+                    </div>
+                    <div class="input-btn">
+                        <a href="index.html">Back to home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="js/script.js"></script>
+<script src="js/validation.js"></script>
+
+</html>
