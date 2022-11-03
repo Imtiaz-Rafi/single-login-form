@@ -30,6 +30,14 @@ a {
 
 .btns {}
 
+section {
+    display: none;
+}
+
+section.active {
+    display: block !important;
+}
+
 /* Sign-Up */
 
 .signup {}
@@ -186,6 +194,7 @@ a {
     padding: 5px;
     display: flex;
     align-items: center;
+    fill: #3c4043;
 }
 
 .login-mail-link>.mail-name>p {
@@ -233,6 +242,7 @@ input.error:focus {
 .input.error.active+.input-label {
     color: #d93025;
 }
+
 .input-label:focus,
 .input.active+.input-label,
 .input:focus+.input-label,
@@ -261,6 +271,11 @@ input.error:focus {
     padding: 5px 0px;
     display: flex;
     gap: 10px;
+}
+
+.err-txt>svg {
+    width: 16px;
+    fill: #d93025;
 }
 
 .info-text {
@@ -350,7 +365,15 @@ input[type=checkbox] {
     background-color: #1661c4;
     cursor: pointer;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-    /* box-shadow: 0 1px 2px 0 var(--gm-fillbutton-keyshadow-color, rgba(60, 64, 67, .3)), 0 1px 3px 1px var(--gm-fillbutton-ambientshadow-color, rgba(60, 64, 67, .15)); */
+}
+
+#show-name {
+    font-size: 24px;
+    line-height: 35px;
+    border-radius: 16px;
+    color: #034429;
+    font-weight: 500;
+    padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 900px) {
