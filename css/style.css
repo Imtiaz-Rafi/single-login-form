@@ -160,10 +160,6 @@ a {
 }
 
 .login-name {
-    width: 100%;
-}
-
-.login-link {
     display: flex;
     justify-content: center;
 }
@@ -237,7 +233,7 @@ input.error:focus {
 .input.error.active+.input-label {
     color: #d93025;
 }
-
+.input-label:focus,
 .input.active+.input-label,
 .input:focus+.input-label,
 .input:active+.input-label {
