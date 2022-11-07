@@ -1,15 +1,3 @@
-let icon = `<svg
-        aria-hidden="true"
-        class="stUf5b qpSchb"
-        fill="currentColor"
-        focusable="false"
-        width="16px"
-        height="16px"
-        viewBox="0 0 24 24"
-        xmlns="https://www.w3.org/2000/svg"
-    >
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
-    </svg>`;
 function signUpSubmit() {
     let signUpForm = document.querySelector("#signUpForm");
     signUpForm.addEventListener("submit", (e) => {
@@ -26,36 +14,67 @@ function signUpSubmit() {
         let email = document.querySelector("#email");
         let pass = document.querySelector("#pass");
         let conPass = document.querySelector("#conpass");
-
+        // Name
         if (!fname.value && !lname.value) {
             fname.classList.add("error");
             lname.classList.add("error");
             nameError.classList.add("err-txt");
-            nameError.innerHTML = icon + `<p>Enter first name and surname</p>`;
+
+            let err = document.querySelector("#both-name-empty");
+            if (err) err.classList.add("active");
+            err = document.querySelector("#fname-empty");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#lname-empty");
+            if (err) err.classList.remove("active");
+
             token = false;
         } else if (!fname.value && lname.value) {
             fname.classList.add("error");
             lname.classList.remove("error");
             nameError.classList.add("err-txt");
-            nameError.innerHTML = icon + `<p>Enter first name</p>`;
+
+            let err = document.querySelector("#both-name-empty");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#fname-empty");
+            if (err) err.classList.add("active");
+            err = document.querySelector("#lname-empty");
+            if (err) err.classList.remove("active");
+
             token = false;
         } else if (!lname.value && fname.value) {
             lname.classList.add("error");
             fname.classList.remove("error");
             nameError.classList.add("err-txt");
-            nameError.innerHTML = icon + `<p>Enter last name</p>`;
+
+            let err = document.querySelector("#both-name-empty");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#fname-empty");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#lname-empty");
+            if (err) err.classList.add("active");
+
             token = false;
         } else {
             lname.classList.remove("error");
             fname.classList.remove("error");
             nameError.classList.remove("err-txt");
-            nameError.innerHTML = "";
+
+            let err = document.querySelector("#both-name-empty");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#fname-empty");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#lname-empty");
+            if (err) err.classList.remove("active");
         }
         // EMAIL
         if (!email.value) {
             email.classList.add("error");
             mailError.classList.add("err-txt");
-            mailError.innerHTML = icon + `<p>Choose a Gmail address</p>`;
+            let err = document.querySelector("#empty-mail");
+            if (err) err.classList.add("active");
+            err = document.querySelector("#invalid-mail");
+            if (err) err.classList.remove("active");
+
             mailText.innerHTML = "";
             mailText.classList.remove("info-text");
             token = false;
@@ -65,20 +84,38 @@ function signUpSubmit() {
             if (!email.value.match(validRegex)) {
                 email.classList.add("error");
                 mailError.classList.add("err-txt");
-                mailError.innerHTML = icon + `<p>Invalid Gmail address</p>`;
+
+                let err = document.querySelector("#empty-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-mail");
+                if (err) err.classList.add("active");
+
                 mailText.innerHTML = "";
                 mailText.classList.remove("info-text");
                 token = false;
             } else {
                 email.classList.remove("error");
-                mailError.innerHTML = "";
+                mailError.classList.remove("err-txt");
+                let err = document.querySelector("#empty-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-mail");
+                if (err) err.classList.remove("active");
             }
         }
         // PASSWORD
         if (!pass.value) {
             pass.classList.add("error");
             passError.classList.add("err-txt");
-            passError.innerHTML = icon + `<p>Enter a password</p>`;
+
+            let err = document.querySelector("#empty-pass");
+            if (err) err.classList.add("active");
+            err = document.querySelector("#invalid-pass");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#empty-conpass");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#diff-pass");
+            if (err) err.classList.remove("active");
+
             passText.innerHTML = "";
             passText.classList.remove("info-text");
             conPass.classList.remove("error");
@@ -90,15 +127,32 @@ function signUpSubmit() {
             if (!pass.value.match(passRegex)) {
                 pass.classList.add("error");
                 passError.classList.add("err-txt");
-                passError.innerHTML =
-                    icon + `<p>Use 8 characters or more for your password</p>`;
+
+                let err = document.querySelector("#empty-pass");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-pass");
+                if (err) err.classList.add("active");
+                err = document.querySelector("#empty-conpass");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#diff-pass");
+                if (err) err.classList.remove("active");
+
                 token = false;
             }
             // Confirm Password
             else if (!conPass.value) {
                 conPass.classList.add("error");
                 passError.classList.add("err-txt");
-                passError.innerHTML = icon + `<p>Confirm your password</p>`;
+
+                let err = document.querySelector("#empty-pass");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-pass");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#empty-conpass");
+                if (err) err.classList.add("active");
+                err = document.querySelector("#diff-pass");
+                if (err) err.classList.remove("active");
+
                 pass.classList.remove("error");
                 token = false;
             } else {
@@ -106,14 +160,30 @@ function signUpSubmit() {
                     pass.classList.remove("error");
                     conPass.classList.add("error");
                     passError.classList.add("err-txt");
-                    passError.innerHTML =
-                        icon +
-                        `<p>Those passwords didn’t match. Try again.</p>`;
+
+                    let err = document.querySelector("#empty-pass");
+                    if (err) err.classList.remove("active");
+                    err = document.querySelector("#invalid-pass");
+                    if (err) err.classList.remove("active");
+                    err = document.querySelector("#empty-conpass");
+                    if (err) err.classList.remove("active");
+                    err = document.querySelector("#diff-pass");
+                    if (err) err.classList.add("active");
+
                     token = false;
                 } else {
                     pass.classList.remove("error");
                     conPass.classList.remove("error");
-                    passError.innerHTML = "";
+                    passError.classList.remove("err-txt");
+
+                    let err = document.querySelector("#empty-pass");
+                    if (err) err.classList.remove("active");
+                    err = document.querySelector("#invalid-pass");
+                    if (err) err.classList.remove("active");
+                    err = document.querySelector("#empty-conpass");
+                    if (err) err.classList.remove("active");
+                    err = document.querySelector("#diff-pass");
+                    if (err) err.classList.remove("active");
                 }
             }
         }
@@ -142,7 +212,14 @@ function mailSubmit() {
         if (!email.value) {
             email.classList.add("error");
             mailError.classList.add("err-txt");
-            mailError.innerHTML = icon + `<p>Choose a Gmail address</p>`;
+
+            let err = document.querySelector("#empty-login-mail");
+            if (err) err.classList.add("active");
+            err = document.querySelector("#invalid-login-mail");
+            if (err) err.classList.remove("active");
+            err = document.querySelector("#notfound-mail");
+            if (err) err.classList.remove("active");
+
             token = false;
         } else {
             // var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -150,11 +227,25 @@ function mailSubmit() {
             if (!email.value.match(validRegex)) {
                 email.classList.add("error");
                 mailError.classList.add("err-txt");
-                mailError.innerHTML = icon + `<p>Invalid Gmail address</p>`;
+
+                let err = document.querySelector("#empty-login-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-login-mail");
+                if (err) err.classList.add("active");
+                err = document.querySelector("#notfound-mail");
+                if (err) err.classList.remove("active");
+
                 token = false;
             } else {
                 email.classList.remove("error");
-                mailError.innerHTML = "";
+                mailError.classList.remove("err-txt");
+
+                let err = document.querySelector("#empty-login-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-login-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#notfound-mail");
+                if (err) err.classList.remove("active");
             }
         }
         if (token === true) {
@@ -165,8 +256,13 @@ function mailSubmit() {
             } else {
                 email.classList.add("error");
                 mailError.classList.add("err-txt");
-                mailError.innerHTML =
-                    icon + `<p>Couldn't find your Google Account</p>`;
+
+                let err = document.querySelector("#empty-login-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#invalid-login-mail");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#notfound-mail");
+                if (err) err.classList.add("active");
             }
         }
     });
@@ -183,7 +279,12 @@ function passSubmit() {
         if (!pass.value) {
             pass.classList.add("error");
             passError.classList.add("err-txt");
-            passError.innerHTML = icon + `<p>Enter a password</p>`;
+
+            let err = document.querySelector("#empty-login-pass");
+            if (err) err.classList.add("active");
+            err = document.querySelector("#wrong-pass");
+            if (err) err.classList.remove("active");
+
             token = false;
         } else {
             // Password verification
@@ -194,9 +295,12 @@ function passSubmit() {
             } else {
                 pass.classList.add("error");
                 passError.classList.add("err-txt");
-                passError.innerHTML =
-                    icon +
-                    `<p>Wrong password. Try again or click ‘Forgot password’ to reset it.</p>`;
+
+                let err = document.querySelector("#empty-login-pass");
+                if (err) err.classList.remove("active");
+                err = document.querySelector("#wrong-pass");
+                if (err) err.classList.add("active");
+
                 token = false;
             }
         }

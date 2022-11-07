@@ -66,12 +66,29 @@
                                     <label for="lname" class="input-label">Last Name</label>
                                 </div>
                             </div>
-                            <div id="name-error"></div>
+                            <div id="name-error" class="error-msg">
+                                <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                                    </path>
+                                </svg>
+                                <p id="both-name-empty">Enter first name and surname</p>
+                                <p id="fname-empty">Enter first name</p>
+                                <p id="lname-empty">Enter last name</p>
+                            </div>
                             <div class="input-box w-100" onchange="isActive()">
                                 <input type="text" class="input" name="email" id="email">
                                 <label for="email" class="input-label">Username</label>
                             </div>
-                            <div id="mail-error"></div>
+                            <div id="mail-error" class="error-msg">
+                                <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                                    </path>
+                                </svg>
+                                <p id="empty-mail">Choose a Gmail address</p>
+                                <p id="invalid-mail">Invalid Gmail address</p>
+                            </div>
                             <div id="mail-text" class="info-text">You can use letters, numbers & periods</div>
                             <div class="input-flex">
                                 <div class="input-box w-50" onchange="isActive()">
@@ -83,7 +100,17 @@
                                     <label for="conpass" class="input-label">Confirm</label>
                                 </div>
                             </div>
-                            <div id="pass-error"></div>
+                            <div id="pass-error" class="error-msg">
+                                <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                                    </path>
+                                </svg>
+                                <p id="empty-pass">Enter a password</p>
+                                <p id="invalid-pass">Use 8 characters or more for your password</p>
+                                <p id="empty-conpass">Confirm your password</p>
+                                <p id="diff-pass">Those passwords didn’t match. Try again.</p>
+                            </div>
                             <div id="pass-text" class="info-text">Use 8 or more characters with a mix of
                                 letters, numbers & symbols</div>
 
@@ -141,7 +168,17 @@
                             <input type="text" class="input login-input" name="email" id="login-email">
                             <label for="email" class="input-label login-label">Email or Phone</label>
                         </div>
-                        <div id="login-mail-error"></div>
+                        <div id="login-mail-error" class="error-msg">
+                            <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                                </path>
+                            </svg>
+                            <p id="empty-login-mail">Choose a Gmail address</p>
+                            <p id="invalid-login-mail">Invalid Gmail address</p>
+                            <p id="notfound-mail">Couldn't find your Google Account</p>
+
+                        </div>
                         <div class="forgot-mail">
                             <a href="#">Forgot email?</a>
                         </div>
@@ -150,7 +187,6 @@
                                 <span class="learn-more">
                                     <a href="#">Learn more</a>
                                 </span>
-
                             </p>
                         </div>
                         <div class="form-bottom">
@@ -210,7 +246,15 @@
                             <input type="password" class="input login-input" name="pass" id="login-pass">
                             <label for="pass" class="input-label login-label">Enter your password</label>
                         </div>
-                        <div id="login-pass-error"></div>
+                        <div id="login-pass-error" class="error-msg">
+                            <svg viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                                </path>
+                            </svg>
+                            <p id="empty-login-pass">Enter a password</p>
+                            <p id="wrong-pass">Wrong password. Try again or click ‘Forgot password’ to reset it.</p>
+                        </div>
                         <div class="input-box input-check">
                             <div class="checkbox">
                                 <input type="checkbox" name="checkbox" id="checkbox" onchange="showPass2()"

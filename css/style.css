@@ -264,12 +264,30 @@ input.error:focus {
 
 .error+.input-label {}
 
+#mail-error,
+#name-error,
+#pass-error,
+#login-mail-error,
+#login-pass-error {
+    display: none;
+}
+
+.err-txt>.active {
+    /* display: block !important; */
+}
+.error-msg>p{
+    display: none;
+}
+.error-msg>p.active{
+    display: block;
+}
+
 .err-txt {
+    display: flex !important;
     font-family: roboto;
     font-size: 12px;
     color: #d93025;
     padding: 5px 0px;
-    display: flex;
     gap: 10px;
 }
 
@@ -375,6 +393,8 @@ input[type=checkbox] {
     font-weight: 500;
     padding-bottom: 20px;
 }
+
+
 
 @media only screen and (max-width: 900px) {
     .signup-container {
